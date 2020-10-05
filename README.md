@@ -1,5 +1,5 @@
 # LD47---Whats-up
-A game where the entire world is stuck in a rotating loop -- Source Code
+A game where the entire world is stuck in an infinite rotating loop
 
 
 # Building
