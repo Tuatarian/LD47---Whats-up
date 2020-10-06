@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/LevelGeometry.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/LevelEnd.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Plr.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/272D2D.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Polygon2D.gd" type="Script" id=6]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[node name="Lvl4" type="Node2D"]
+
+[node name="LevelGeometry" type="Node2D" parent="."]
+position = Vector2( 960, 576 )
+script = ExtResource( 2 )
+
+[node name="Bg" type="Sprite" parent="LevelGeometry"]
+position = Vector2( -24, -16 )
+scale = Vector2( 9.89474, 6.50292 )
+texture = ExtResource( 5 )
+
+[node name="LevelEnd" parent="LevelGeometry" instance=ExtResource( 3 )]
+position = Vector2( 848, -8 )
+
+[node name="Block3" type="KinematicBody2D" parent="LevelGeometry"]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelGeometry/Block3"]
+color = Color( 0.721569, 0.772549, 0.839216, 1 )
+polygon = PoolVector2Array( -984, 456, -824, 344, -576, 352, -536, 224, -280, 248, -232, -24, -448, -40, -384, -208, -88, -24, 80, 168, 208, 328, 376, 344, 424, 496, 416, 576, -840, 616 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelGeometry/Block3"]
+script = ExtResource( 6 )
+
+[node name="Block4" type="KinematicBody2D" parent="LevelGeometry"]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelGeometry/Block4"]
+position = Vector2( 24, 32 )
+color = Color( 0.721569, 0.772549, 0.839216, 1 )
+polygon = PoolVector2Array( 72, 56, 296, 72, 528, 232, 1032, 216, 992, 512, 640, 568, -320, 376, -360, 176 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelGeometry/Block4"]
+script = ExtResource( 6 )
+
+[node name="Block5" type="KinematicBody2D" parent="LevelGeometry"]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelGeometry/Block5"]
+color = Color( 0.721569, 0.772549, 0.839216, 1 )
+polygon = PoolVector2Array( -912, -240, -744, -256, -664, -360, -536, -360, -448, -400, -240, -424, -176, -384, -32, -408, 72, -336, 168, -288, 368, -232, 560, -240, 624, -56, 704, -240, 768, -192, 808, -232, 872, -168, 944, -184, 1048, -160, 808, -472, 1104, -488, 968, -592, 736, -616, -496, -712, -1016, -560, -1088, -376 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelGeometry/Block5"]
+script = ExtResource( 6 )
+
+[node name="Plr" parent="." instance=ExtResource( 4 )]
+position = Vector2( 88, 608 )
+physics_material_override = SubResource( 1 )

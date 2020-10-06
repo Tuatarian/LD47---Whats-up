@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/title.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Mainu.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.219608, 0.258824, 0.270588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.27451, 0.317647, 0.360784, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.152941, 0.176471, 0.176471, 1 )
+
+[node name="Mainu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 1792.0
+margin_bottom = 960.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1664.0
+margin_bottom = 832.0
+custom_constants/separation = 100
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 1792.0
+margin_bottom = 318.0
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0.152941, 0.176471, 0.176471, 1 )
+custom_colors/font_color_shadow = Color( 0.152941, 0.176471, 0.176471, 1 )
+text = "               What's up?"
+fit_content_height = true
+
+[node name="ButPl" type="Button" parent="."]
+margin_left = 640.0
+margin_top = 400.0
+margin_right = 1280.0
+margin_bottom = 640.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlTimer" type="Timer" parent="."]
+
+[node name="ButEx" type="Button" parent="."]
+margin_left = 640.0
+margin_top = 744.0
+margin_right = 1280.0
+margin_bottom = 984.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="focus_entered" from="ButPl" to="ButPl" method="_on_Button_focus_entered"]
+[connection signal="pressed" from="ButPl" to="." method="_on_ButPl_pressed"]
+[connection signal="timeout" from="PlTimer" to="." method="_on_PlTimer_timeout"]
+[connection signal="focus_entered" from="ButEx" to="ButEx" method="_on_Button_focus_entered"]

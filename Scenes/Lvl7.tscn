@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Plr.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Polygon2D.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/LevelGeometry.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Plr.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/LevelEnd.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/272D2D.png" type="Texture" id=6]
+[ext_resource path="res://Sansita font/SansitaSwashed-Black.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Scenes/title.tres" type="DynamicFont" id=8]
+
+[sub_resource type="DynamicFont" id=2]
+size = 90
+outline_color = Color( 0.152941, 0.176471, 0.176471, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[node name="Lvl7" type="Node2D"]
+
+[node name="LevelGeometry" type="Node2D" parent="."]
+position = Vector2( 960, 576 )
+script = ExtResource( 3 )
+
+[node name="Bg" type="Sprite" parent="LevelGeometry"]
+position = Vector2( 72, -16 )
+scale = Vector2( 9.89474, 6.50292 )
+texture = ExtResource( 6 )
+
+[node name="Block3" type="KinematicBody2D" parent="LevelGeometry"]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelGeometry/Block3"]
+position = Vector2( -32, 32 )
+color = Color( 0.721569, 0.772549, 0.839216, 1 )
+polygon = PoolVector2Array( -936, 376, -728, 392, -648, 312, -344, 328, 48, 368, 192, 280, 368, 328, 472, 288, 1024, 368, 1128, 560, -1000, 544 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelGeometry/Block3"]
+script = ExtResource( 2 )
+
+[node name="Block4" type="KinematicBody2D" parent="LevelGeometry"]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelGeometry/Block4"]
+position = Vector2( 24, 32 )
+color = Color( 0.721569, 0.772549, 0.839216, 1 )
+polygon = PoolVector2Array( -1096, -512, -960, -448, -352, -408, -240, -456, 424, -424, 776, -480, 1016, -392, 1208, -608, -1152, -600 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelGeometry/Block4"]
+script = ExtResource( 2 )
+
+[node name="Block5" type="KinematicBody2D" parent="LevelGeometry"]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelGeometry/Block5"]
+color = Color( 0.721569, 0.772549, 0.839216, 1 )
+polygon = PoolVector2Array( 1072, -504, 1272, -360, 1152, 160, 1304, 496, 960, 720, 1112, 312, 848, 216, 1016, 88, 832, -40, 1120, -160, 864, -248, 1184, -304, 968, -448 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelGeometry/Block5"]
+script = ExtResource( 2 )
+
+[node name="LevelEnd" type="KinematicBody2D" parent="LevelGeometry" instance=ExtResource( 5 )]
+position = Vector2( 800, 96 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 48.0
+margin_top = 224.0
+margin_right = 1552.0
+margin_bottom = 416.0
+custom_fonts/normal_font = ExtResource( 8 )
+text = "Thanks for Playing!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 256.0
+margin_top = 400.0
+margin_right = 1296.0
+margin_bottom = 512.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Whats up? by Tuatarian"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 424.0
+margin_top = 520.0
+margin_right = 1104.0
+margin_bottom = 648.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "MAde for LD47"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+margin_left = 264.0
+margin_top = 648.0
+margin_right = 1304.0
+margin_bottom = 776.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Please rate & comment!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plr" type="RigidBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 88, 608 )
+mode = 3
+mass = 0.00102041
+physics_material_override = SubResource( 1 )
+gravity_scale = 0.0
+continuous_cd = 2
+contacts_reported = 3
+contact_monitor = true
+script = ExtResource( 1 )
+scalar = 30
+[connection signal="body_entered" from="Plr" to="Plr" method="_on_Plr_body_entered"]

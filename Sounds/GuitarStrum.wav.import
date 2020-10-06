@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GuitarStrum.wav-815ae8ca8f72dbaaf545dad3c507401b.sample"
+
+[deps]
+
+source_file="res://Sounds/GuitarStrum.wav"
+dest_files=[ "res://.import/GuitarStrum.wav-815ae8ca8f72dbaaf545dad3c507401b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

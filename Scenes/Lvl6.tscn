@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Plr.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Polygon2D.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/LevelGeometry.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/LevelEnd.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Plr.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/272D2D.png" type="Texture" id=6]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[node name="Lvl6" type="Node2D"]
+
+[node name="LevelGeometry" type="Node2D" parent="."]
+position = Vector2( 960, 576 )
+script = ExtResource( 3 )
+
+[node name="Bg" type="Sprite" parent="LevelGeometry"]
+position = Vector2( 96, 56 )
+scale = Vector2( 9.89474, 6.50292 )
+texture = ExtResource( 6 )
+
+[node name="Block3" type="KinematicBody2D" parent="LevelGeometry"]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelGeometry/Block3"]
+position = Vector2( -32, 32 )
+color = Color( 0.721569, 0.772549, 0.839216, 1 )
+polygon = PoolVector2Array( -1152, -432, -944, -312, -912, -384, -784, -408, -856, -360, -704, -344, -680, -360, -560, -328, -672, -328, -696, -288, -776, -328, -744, -280, -920, -296, -800, -224, -640, -224, -600, -296, -616, -168, -504, -304, -440, -184, -488, -120, -456, -72, -400, -104, -368, -56, -344, -128, -256, -128, -320, -192, -256, -184, -296, -304, -208, -448, -208, -320, -160, -360, -184, -304, -96, -320, -144, -264, -112, -176, -128, -144, -208, -128, -240, -72, -176, -72, -136, -104, -40, -144, 40, -144, -63.9999, -272, -24, -216, -32, -320, 40, -392, 112, -304, 232, -336, 136, -248, 240, -216, 336, -224, 336, -456, 480, -400, 624, -416, 560, -312, 448, -264, 528, -256, 584, -288, 664, -264, 656, -232, 768, -232, 792, -280, 840, -256, 856, -320, 920, -320, 944, -376, 840, -392, 912, -480, 1024, -328, 976, -240, 1088, -256, 1040, -576, 856, -760, 216, -784, -1152, -784, -1336, -488 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelGeometry/Block3"]
+script = ExtResource( 2 )
+
+[node name="Block4" type="KinematicBody2D" parent="LevelGeometry"]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelGeometry/Block4"]
+position = Vector2( 24, 32 )
+color = Color( 0.721569, 0.772549, 0.839216, 1 )
+polygon = PoolVector2Array( -1024, 392, -952, 408, -888, 400, -888, 368, -968, 336, -904, 320, -864, 264, -872, 352, -856, 312, -816, 256, -792, 304, -776, 336, -720, 336, -760, 304, -784, 264, -784, 208, -704, 256, -640, 240, -640, 216, -600, 248, -592, 200, -568, 248, -520, 240, -552, 192, -536, 168, -496, 152, -504, 176, -432, 104, -400, 120, -320, 112, -360, 128, -464, 208, -448, 232, -328, 152, -280, 144, -376, 264, -416, 248, -448, 272, -416, 296, -376, 296, -368, 352, -568, 352, -368, 448, -280, 416, -304, 384, -264, 376, -256, 336, -304, 312, -264, 296, -280, 256, -224, 304, -184, 352, -176, 328, -136, 320, -88, 256, -136, 176, -264, 216, -240, 128, -232, 96, -168, 120, -144, 64, -136, 112, -96, 112, -80, 64, -40, 64, -16, 24, 16, 24, -24, 136, 32, 136, -56.0001, 184, -16, 272, 48, 312, 144, 152, 120, 104, 120, 80, 64, 0, 152, 72, 232, -16, 208, 96, 248, 112, 144, 280, 184, 408, 280, 360, 304, 304, 264, 288, 256, 240, 376, 296, 408, 264, 328, 224, 344, 160, 424, 192, 368, 128, 416, 128, 448, 128, 440, 104, 464, 128, 504, 112, 480, 152, 536, 152, 464, 192, 456, 248, 464, 416, 720, 472, 680, 192, 664, 168, 664, 128, 680, 96, 696, 96, 712, 96, 792, 136, 784, 184, 768, 224, 832, 176, 800, 216, 880, 240, 800, 256, 952, 360, 944, 560, 240, 648, -440, 696, -856, 592, -1240, 568 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelGeometry/Block4"]
+script = ExtResource( 2 )
+
+[node name="Block5" type="KinematicBody2D" parent="LevelGeometry"]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelGeometry/Block5"]
+color = Color( 0.721569, 0.772549, 0.839216, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelGeometry/Block5"]
+script = ExtResource( 2 )
+
+[node name="LevelEnd" type="KinematicBody2D" parent="LevelGeometry" instance=ExtResource( 4 )]
+position = Vector2( 616, 352 )
+
+[node name="Plr" type="RigidBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 88, 608 )
+mode = 3
+mass = 0.00102041
+physics_material_override = SubResource( 1 )
+gravity_scale = 0.0
+continuous_cd = 2
+contacts_reported = 3
+contact_monitor = true
+script = ExtResource( 1 )
+scalar = 30
+[connection signal="body_entered" from="Plr" to="Plr" method="_on_Plr_body_entered"]

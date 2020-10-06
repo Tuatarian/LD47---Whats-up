@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Plr.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/B8C5D6.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/LevelGeometry.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/LevelEnd.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/272D2D.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 520, 168 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 672, 168 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1200, 168 )
+
+[node name="Lvl1" type="Node2D"]
+
+[node name="LevelGeometry" type="Node2D" parent="."]
+position = Vector2( 960, 576 )
+script = ExtResource( 3 )
+
+[node name="Bg" type="Sprite" parent="LevelGeometry"]
+position = Vector2( 15.9999, 24 )
+scale = Vector2( 10.5263, 7.01754 )
+texture = ExtResource( 5 )
+
+[node name="LevelEnd" parent="LevelGeometry" instance=ExtResource( 4 )]
+position = Vector2( 848, -8 )
+
+[node name="Block" type="KinematicBody2D" parent="LevelGeometry"]
+position = Vector2( -464, 488 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="LevelGeometry/Block"]
+position = Vector2( 0, -6.10352e-05 )
+scale = Vector2( 4.56142, 1.9576 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelGeometry/Block"]
+shape = SubResource( 1 )
+
+[node name="Block2" type="KinematicBody2D" parent="LevelGeometry"]
+position = Vector2( 128, 456 )
+rotation = -0.380482
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="LevelGeometry/Block2"]
+position = Vector2( 0, -6.10352e-05 )
+scale = Vector2( 4.56142, 1.9576 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelGeometry/Block2"]
+shape = SubResource( 1 )
+
+[node name="Block3" type="KinematicBody2D" parent="LevelGeometry"]
+position = Vector2( 168, -336 )
+rotation = -0.380482
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="LevelGeometry/Block3"]
+position = Vector2( 0, -6.10352e-05 )
+scale = Vector2( 4.56142, 1.9576 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelGeometry/Block3"]
+shape = SubResource( 1 )
+
+[node name="Block4" type="KinematicBody2D" parent="LevelGeometry"]
+position = Vector2( 840, 592 )
+rotation = 0.525344
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="LevelGeometry/Block4"]
+position = Vector2( 0, -6.10352e-05 )
+scale = Vector2( 4.56142, 1.9576 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelGeometry/Block4"]
+shape = SubResource( 1 )
+
+[node name="Block5" type="KinematicBody2D" parent="LevelGeometry"]
+position = Vector2( 224, 640 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="LevelGeometry/Block5"]
+position = Vector2( 1.90735e-05, -6.10352e-05 )
+scale = Vector2( 5.89474, 1.9576 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelGeometry/Block5"]
+shape = SubResource( 2 )
+
+[node name="Block6" type="KinematicBody2D" parent="LevelGeometry"]
+position = Vector2( 16, -536 )
+
+[node name="Sprite" type="Sprite" parent="LevelGeometry/Block6"]
+scale = Vector2( 10.5132, 1.9576 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelGeometry/Block6"]
+shape = SubResource( 3 )
+
+[node name="Plr" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88, 608 )

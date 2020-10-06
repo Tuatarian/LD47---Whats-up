@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/HC Frick watching the Johnstown flood.wav-a8ea3027564b0c8ee181a70d9a7a5f6f.sample"
+
+[deps]
+
+source_file="res://Sounds/HC Frick watching the Johnstown flood.wav"
+dest_files=[ "res://.import/HC Frick watching the Johnstown flood.wav-a8ea3027564b0c8ee181a70d9a7a5f6f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,8 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://Sansita font/SansitaSwashed-Black.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 156
+outline_color = Color( 0.152941, 0.176471, 0.176471, 1 )
+font_data = ExtResource( 1 )
